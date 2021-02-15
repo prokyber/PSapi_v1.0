@@ -3,7 +3,10 @@ import exit_codes
 import macros
 
 # EXAMPLE
-#
+# import sys
+# sys.path.insert(1,"./modbus_api")
+# sys.path.insert(1,"./macros")
+# sys.path.insert(1,"./configurations")
 # from Modbus_Connection_Handler import Modbus_Connection_Handler
 # from Devices import Switch
 # import device_configurations
@@ -44,7 +47,11 @@ class Switch:
         self.disable()
 
 # EXAMPLE_1
-# 
+#
+# # import sys
+# sys.path.insert(1,"./modbus_api")
+# sys.path.insert(1,"./macros")
+# sys.path.insert(1,"./configurations")
 # from Modbus_Connection_Handler import Modbus_Connection_Handler
 # from Devices import Pressure_Sencor
 # import device_configurations
@@ -82,6 +89,10 @@ class Pressure_Sencor:
 ###########
 # EXAMPLE_1
 #
+# import sys
+# sys.path.insert(1,"./modbus_api")
+# sys.path.insert(1,"./macros")
+# sys.path.insert(1,"./configurations")
 # from Modbus_Connection_Handler import Modbus_Connection_Handler
 # from Devices import Step_Motor
 # import device_configurations
@@ -89,11 +100,15 @@ class Pressure_Sencor:
 # modbus = Modbus_Connection_Handler(True)
 # motor = Step_Motor(device_configurations.MOTOR_REG,device_configurations.slave_ID,device_configurations.MOTOR_PPR_VALUE,device_configurations.MOTOR_DIRECTION_MULTIPLIER)
 # motor.enable()
-# motor.rotate_until_angle_reached(10,180)
+# motor.rotate_until_angle_reached(10,90)
 # 
 ###########
 # EXAMPLE_2
 #
+# import sys
+# sys.path.insert(1,"./modbus_api")
+# sys.path.insert(1,"./macros")
+# sys.path.insert(1,"./configurations")
 # from Modbus_Connection_Handler import Modbus_Connection_Handler
 # from Devices import Step_Motor
 # import device_configurations

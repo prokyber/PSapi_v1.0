@@ -39,17 +39,23 @@ class Modbus_Connection_Error_Handler:
         if (self.__logging):
             print(Fore.RED + "Error: " + Fore.RESET + "Modbus server: request failed.")
 
+    def __critical_error(self,error):
+        if (self.__logging):
+            print(Fore.RED + "Critical error." + Fore.RESET + " Program will be terminated.")
+        exit(error)
+        
 class Modbus_Connection_Handler:
     def __init__(self,debug):
         self.__stop_bits = modbus_configs.modbus_configs['stop_bits']
         self.__package_size = modbus_configs.modbus_configs['package_size']
         self.__parity = modbus_configs.modbus_configs['parity']
-        self.__baud_rate = modbus_configs.modbus_configs['baus_rate']
+        self.__baud_rate = modbus_configs.modbus_configs['baud_rate']
         self.__slave_ID = modbus_configs.modbus_configs['slave_ID']
         self.__device_register = modbus_configs.modbus_configs['device_reg']
         self.__error_handler = Modbus_Connection_Error_Handler(debug)
+        self.__init()
     
-    def init_modbus(self):
+    def __init(self):
         if (self.__create_modbus()):
             self.__error_handler.modbus_init_no_error()
         else:
