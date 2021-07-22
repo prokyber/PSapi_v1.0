@@ -44,6 +44,7 @@ modbus = Modbus_Connection_Handler(True)
 motor = Step_Motor(device_configurations.MOTOR_REG,device_configurations.slave_ID,device_configurations.MOTOR_PPR_VALUE,device_configurations.MOTOR_DIRECTION_MULTIPLIER)
 motor.enable()
 motor.rotate_until_angle_reached(10,90)
+motor.disable()
 # 
 ###########
 # EXAMPLE_2
