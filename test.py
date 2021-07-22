@@ -1,17 +1,17 @@
-import sys
-sys.path.insert(1,"./modbus_api")
-sys.path.insert(1,"./macros")
-sys.path.insert(1,"./configurations")
-from Modbus_Connection_Handler import Modbus_Connection_Handler
-from Devices import Switch
-import device_configurations
-import time
+# import sys
+# sys.path.insert(1,"./modbus_api")
+# sys.path.insert(1,"./macros")
+# sys.path.insert(1,"./configurations")
+# from Modbus_Connection_Handler import Modbus_Connection_Handler
+# from Devices import Switch
+# import device_configurations
+# import time
 
-modbus = Modbus_Connection_Handler(True)
-switch = Switch(device_configurations.POWER_CONTROL_REG,device_configurations.DEVICE_SLAVE_ID)
-switch.enable()
-time.sleep(1)
-switch.disable()
+# modbus = Modbus_Connection_Handler(True)
+# switch = Switch(device_configurations.POWER_CONTROL_REG,device_configurations.DEVICE_SLAVE_ID)
+# switch.enable()
+# time.sleep(1)
+# switch.disable()
 
 
 # # import sys
@@ -32,18 +32,18 @@ switch.disable()
 ###########
 # EXAMPLE_1
 #
-# import sys
-# sys.path.insert(1,"./modbus_api")
-# sys.path.insert(1,"./macros")
-# sys.path.insert(1,"./configurations")
-# from Modbus_Connection_Handler import Modbus_Connection_Handler
-# from Devices import Step_Motor
-# import device_configurations
-#
-# modbus = Modbus_Connection_Handler(True)
-# motor = Step_Motor(device_configurations.MOTOR_REG,device_configurations.slave_ID,device_configurations.MOTOR_PPR_VALUE,device_configurations.MOTOR_DIRECTION_MULTIPLIER)
-# motor.enable()
-# motor.rotate_until_angle_reached(10,90)
+import sys
+sys.path.insert(1,"./modbus_api")
+sys.path.insert(1,"./macros")
+sys.path.insert(1,"./configurations")
+from Modbus_Connection_Handler import Modbus_Connection_Handler
+from Devices import Step_Motor
+import device_configurations
+
+modbus = Modbus_Connection_Handler(True)
+motor = Step_Motor(device_configurations.MOTOR_REG,device_configurations.slave_ID,device_configurations.MOTOR_PPR_VALUE,device_configurations.MOTOR_DIRECTION_MULTIPLIER)
+motor.enable()
+motor.rotate_until_angle_reached(10,90)
 # 
 ###########
 # EXAMPLE_2
